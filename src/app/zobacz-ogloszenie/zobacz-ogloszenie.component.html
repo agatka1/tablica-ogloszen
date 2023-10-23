@@ -1,0 +1,28 @@
+
+<div class="card">
+    <h2> {{ pokazOgloszenie.title }} </h2>
+    <h6> kategoria: {{ pokazOgloszenie.category }} </h6>
+    <p> {{ pokazOgloszenie.description }} </p>
+    <div>
+        <button class="btn btn-warning col-2" (click)="toEdit()" [routerLink]="['/ogloszenia', pokazOgloszenie.title, 'edit']">edytuj</button>
+        <button class="btn btn-warning col-2" (click)="onDelete()" routerLink="/ogloszenia">usuń</button>
+        <button class="btn btn-warning col-4" (click)="changeImportant()" routerLink="/ogloszenia"> {{ napis }} </button>
+        <button class="btn btn-warning col-2" routerLink="/ogloszenia">cofnij</button>
+    </div>
+</div>
+
+<div class="podobne">
+    <h4>podobne ogłoszenia:</h4>
+
+    <div>
+        <div class="zakladka" *ngFor="let podobne of podobneOgloszenia">
+            <h6> {{ podobne.title }} </h6>
+            <p class="opis"> {{ podobne.description }} </p>
+        </div>
+    </div>
+
+</div>
+
+<div>
+    <router-outlet></router-outlet>
+</div>

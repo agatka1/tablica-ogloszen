@@ -1,0 +1,31 @@
+<form #f="ngForm" (ngSubmit)="ngSubmit()">
+
+    <div class="row form-group">
+        <label for="photo">podaj link do zdjęcia, które będzie wyświetlane:</label>
+        <input 
+        class="form-control"
+        type="text" 
+        id="photo"
+        name="photo"
+        ngModel
+        #photo="ngModel"
+        required>
+    </div>
+
+    <div class="radio" *ngFor="let offer of offers">
+        <label>
+            <div class="oferta">
+                {{ offer.term }} <hr> {{ offer.cost }}zł
+                <input
+                    required
+                    type="radio"
+                    name="offer"
+                    ngModel
+                    [value]="offer.cost">
+            </div>
+        </label>
+    </div>
+
+    <button class="btn btn-warning" type="submit" [disabled]="!f.valid">przejdź do zakupu</button>
+
+</form>

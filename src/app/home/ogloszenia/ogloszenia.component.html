@@ -1,0 +1,18 @@
+<h2>ogłoszenia</h2>
+
+<div *ngIf="notImportantOgloszenia.length === 0">nie ma żadnych zwykłych ogłoszeń</div>
+
+<div class="card" *ngFor="let notImportantOgloszenie of notImportantOgloszenia; let i = index">
+    <div class="row">
+        <h2 class="col-8 tytul"> {{ notImportantOgloszenie.title }} </h2>
+        <button class="col-3" (click)="favChange(notImportantOgloszenie)" [ngClass]="{'fav': notImportantOgloszenie.fav, 'notfav': !notImportantOgloszenie.fav}">ulubione</button>
+    </div>
+    <h6> kategoria: {{ notImportantOgloszenie.category }} </h6>
+    <p> {{ notImportantOgloszenie.description }} </p>
+    <div class="row">
+        <button class="btn btn-warning col-2" routerLink="/edit" (click)="toEdit(notImportantOgloszenie)">edytuj</button>
+        <button class="btn btn-warning col-2" (click)="onDelete(notImportantOgloszenie)">usuń</button>
+        <button class="btn btn-warning col-4" (click)="onDoImportant(notImportantOgloszenie, i)">oznacz jako ważne</button>
+        <button class="btn btn-warning col-2" [routerLink]="['/ogloszenia', notImportantOgloszenie.title]" (click)="toSee(notImportantOgloszenie, i)">zobacz</button>
+    </div>
+</div>

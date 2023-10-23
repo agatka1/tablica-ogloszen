@@ -1,0 +1,24 @@
+input, textarea {
+    margin: 1rem;
+}
+
+form {
+    margin: 0rem 3rem 2rem 3rem;
+    background-color: bisque;
+    padding: 1rem;
+    border-radius: 1.5rem;
+}
+
+button {
+    margin-right: 1rem;
+}
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.help-block {
+    font-size: 0.8rem;
+    color: red;
+}
+

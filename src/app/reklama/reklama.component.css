@@ -1,0 +1,21 @@
+.oferta {
+    background-color: bisque;
+    padding: 2rem;
+    padding-bottom: 5rem;
+    border-radius: 1rem;
+    text-align: center;
+    margin: 1rem;
+}
+
+.row {
+    margin: 0.6rem;
+}
+
+button {
+    margin-left: 1rem;
+    margin-top: 2rem;
+}
+
+.radio {
+    display: inline;
+}

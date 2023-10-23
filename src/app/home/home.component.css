@@ -1,0 +1,43 @@
+.center { 
+    text-align: center;
+    font-size: 40px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.tablica {
+    text-shadow: 4px 4px 8px grey;
+}
+
+p {
+    color: red;
+    text-align: center;
+}
+
+.odstep {
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+
+.szukaj {
+    margin-top: 7rem;
+}
+
+.form-group {
+    border: 1px solid black;
+    border-radius: 0.4rem;
+    padding: 1.5rem;
+}
+
+.reklama {
+    padding: 1rem;
+    background-image: linear-gradient(rgb(252, 255, 207), rgb(255, 255, 34));
+    text-align: center;
+    margin-left: 3rem;
+    border-radius: 0.4rem;
+}
+
+.tlo {
+    background-color: rgb(253, 228, 115);
+}

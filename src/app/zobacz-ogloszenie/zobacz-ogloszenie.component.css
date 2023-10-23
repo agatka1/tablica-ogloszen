@@ -1,0 +1,28 @@
+.card {
+    background-color: antiquewhite;
+    padding: 1rem;
+    margin: 5rem 2rem 1rem 2rem;
+}
+
+button {
+    margin-right: 1rem;
+}
+
+.podobne {
+    margin-top: 2.5rem;
+}
+
+.zakladka {
+    background-color: antiquewhite;
+    padding: 1rem;
+    margin: 1.5rem 20rem 0rem 2rem;
+    border-radius: 2rem;
+}
+
+.opis {
+    font-size: 0.8rem;
+}
+
+.show {
+    font-size: 0.7rem;
+}

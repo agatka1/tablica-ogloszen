@@ -1,0 +1,55 @@
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+
+    <label for="title" class="col-1">tytuł:</label>
+    <div>
+        <input 
+        type="text" 
+        id="title" 
+        name="title"
+        ngModel
+        class="form-control col-7"
+        appCustomRequired
+        #title="ngModel">
+        <span class="help-block" *ngIf="!title.valid && title.touched && title.value === ''">To pole jest wymagane!</span>
+        <span class="help-block" *ngIf="!title.valid && title.touched && title.value !== ''">Taki tytuł już istnieje. Zmień go</span>
+    </div>
+    <label for="description" class="col-1">opis:</label>
+    <div>
+        <textarea 
+        class="form-control col-11" 
+        id="description" 
+        name="description"
+        ngModel
+        rows="4"
+        required
+        minlength="11"
+        #description="ngModel"></textarea>
+        <span class="help-block" *ngIf="!description.valid && description.touched && description.value === ''">To pole jest wymagane!</span>
+        <span class="help-block" *ngIf="description.touched && description.value.length <= 10 && description.value !== ''">Opis jest za krótki</span>
+    </div>
+    <div>
+        <label for="category">kategoria:</label>
+        <select
+        id="category"
+        name="category"
+        required
+        ngModel
+        #category="ngModel">
+            <option value="sprzedaż">sprzedaż</option>
+            <option value="wydarzenie">wydarzenie</option>
+            <option value="poszukiwanie">poszukiwanie</option>
+            <option value="informacja">informacja</option>
+        </select>
+    </div>
+    <div>
+        <input 
+        type="checkbox" 
+        id="important"
+        name="important"
+        ngModel>
+        <label class="col-7" for="important">oznacz jako ważne</label>
+        <button class="btn btn-warning col-1" type="submit" [disabled]="!f.valid">SAVE</button>
+        <button class="btn btn-warning col-1" routerLink="../" (click)="onCancel()">cancel</button>
+        <button class="btn btn-warning col-1" type="button" (click)="onClear()">clear</button>
+    </div>
+</form>

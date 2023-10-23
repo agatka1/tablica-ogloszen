@@ -1,0 +1,22 @@
+.card {
+    background-color: rgb(255, 254, 221);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 5px 5px rgb(249, 255, 158);
+}
+
+button {
+    margin-right: 1rem;
+}
+
+.notfav {
+    background-color: gray;
+}
+
+.fav {
+    background-color: yellow;
+}
+
+.tytul {
+    text-shadow: 2px 2px 5px grey;
+}

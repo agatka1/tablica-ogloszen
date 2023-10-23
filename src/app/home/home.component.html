@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="tablica col-12 center">
+        TABLICA OGŁOSZEŃ
+        <button class="btn btn-warning" routerLink="dodaj" [disabled]="przepelnienieTablicy">+</button>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+  
+  <p *ngIf="przepelnienieTablicy">tablica ogłoszeń jest przepełniona! Nie można dodać więcej ogłoszeń</p>
+
+<form #f="ngForm">
+    <div class="row">
+    <div class="form-group col-4 tlo">
+        <label for="category">kategoria:</label>
+        <select
+        class="form-control"
+        id="category"
+        name="category"
+        ngModel
+        #category="ngModel">
+            <option value="wszystkie">wszystkie</option>
+            <option value="sprzedaż">sprzedaż</option>
+            <option value="wydarzenie">wydarzenie</option>
+            <option value="poszukiwanie">poszukiwanie</option>
+            <option value="informacja">informacja</option>
+        </select>
+        <label for="favorite" class="odstep">pokaż tylko ulubione</label>
+        <input 
+        type="checkbox" 
+        id="favorite"
+        name="favorite"
+        ngModel>
+    </div>
+    <div class="col-1 szukaj">
+        <button class="btn btn-warning" (click)="szukaj()">szukaj</button>
+    </div>
+    <div class="reklama col-6" *ngIf="url === ''">
+        <h5>MIEJSCE NA TWOJĄ REKLAMĘ</h5>
+        <button class="btn btn-warning" routerLink="/kup-reklame">wykup reklamę</button>
+    </div>
+    <div class="reklama col-6" *ngIf="url !== ''">
+        <img width="450rem" height="120rem" [src]=url alt="">
+    </div>
+    </div>
+</form>
+
+<hr>
+
+  <div class="row">
+    <div class="col-6">
+        <app-najwazniejsze-ogloszenia></app-najwazniejsze-ogloszenia>
+    </div>
+    <div class="col-6">
+        <app-ogloszenia></app-ogloszenia>
+    </div>
+  </div>
+  
